@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, Paperclip, Mic, LayoutTemplate, Wand2, ArrowRight, Loader2, Copy, Check, Beaker } from 'lucide-react';
+import { Sparkles, LayoutTemplate, Wand2, ArrowRight, Loader2, Copy, Check, Beaker } from 'lucide-react';
 import { fixPrompt } from '../lib/ai';
 
 export function PromptBuilder() {
@@ -88,7 +88,7 @@ export function PromptBuilder() {
             <span className="text-sm font-medium text-gray-600">Fixing prompt...</span>
           </div>
         )}
-        <div className="p-[34px] pb-4 min-h-[200px] max-h-[500px] overflow-y-auto">
+        <div className="p-[34px] pb-4 min-h-[200px] max-h-[400px] overflow-y-auto">
           {viewMode === 'raw' ? (
             <textarea
               value={prompt}
@@ -106,13 +106,6 @@ export function PromptBuilder() {
         {/* Bottom Action Row */}
         <div className="px-4 py-3 border-t border-gray-100 flex items-center justify-between bg-[#f8f8f8]">
           <div className="flex items-center gap-2">
-            <button className="p-2 text-gray-400 hover:text-[#000] hover:bg-gray-200/50 rounded-lg transition-colors" title="Attach File">
-              <Paperclip className="w-4 h-4" />
-            </button>
-            <button className="p-2 text-gray-400 hover:text-[#000] hover:bg-gray-200/50 rounded-lg transition-colors" title="Voice Input">
-              <Mic className="w-4 h-4" />
-            </button>
-            <div className="w-[1px] h-4 bg-gray-200 mx-1"></div>
             <button 
               onClick={handleDemoPrompt}
               className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-gray-600 hover:text-[#000] hover:bg-gray-200/50 rounded-lg transition-colors"
